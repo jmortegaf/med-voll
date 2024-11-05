@@ -1,8 +1,10 @@
 package med.voll.api.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record AddressData(
-        String street,
-        String district,
-        String city,
-        String number,
-        String modifier) {}
+        @NotBlank String street,
+        @NotBlank String district,
+        @NotBlank String city,
+        @NotBlank String number,
+        @NotBlank String modifier) {}
