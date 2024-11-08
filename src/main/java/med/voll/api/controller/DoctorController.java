@@ -2,7 +2,6 @@ package med.voll.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import lombok.Locked;
 import med.voll.api.dto.ReadDoctorData;
 import med.voll.api.dto.CreateDoctorData;
 import med.voll.api.dto.UpdateDoctorData;
@@ -16,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.print.Doc;
 import java.net.URI;
 import java.util.Optional;
 

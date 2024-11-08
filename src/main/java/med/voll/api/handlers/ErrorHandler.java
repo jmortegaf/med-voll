@@ -1,6 +1,7 @@
 package med.voll.api.handlers;
 
 import jakarta.persistence.EntityNotFoundException;
+import med.voll.api.exceptions.NoEntityFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -38,6 +39,10 @@ public class ErrorHandler {
     public ResponseEntity error400Handler(MethodArgumentNotValidException e){
         return ResponseEntity.badRequest().body(e.getFieldErrors().stream()
                 .map(ErrorData::new));
+    }
+    @ExceptionHandler(NoEntityFoundException.class)
+    public ResponseEntity errorHandler(NoEntityFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMsg());
     }
 
     private record ErrorData(String field,String msg){
