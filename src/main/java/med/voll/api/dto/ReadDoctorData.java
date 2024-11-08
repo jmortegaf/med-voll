@@ -2,6 +2,7 @@ package med.voll.api.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.NoArgsConstructor;
 import med.voll.api.models.Doctor;
 import med.voll.api.models.DoctorSpecialty;
 
